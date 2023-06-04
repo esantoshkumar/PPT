@@ -1,0 +1,29 @@
+def moveZeroes(nums):
+    n = len(nums)
+    left = 0  
+
+    
+    for i in range(n):
+        if nums[i] != 0:
+            nums[left] = nums[i]
+            left += 1
+
+   
+    for i in range(left, n):
+        nums[i] = 0
+
+    return nums
+============================================================================
+
+
+def firstUniqChar(s):
+    char_freq = {}
+    
+    for char in s:
+        char_freq[char] = char_freq.get(char, 0) + 1
+
+    for i, char in enumerate(s):
+        if char_freq[char] == 1:
+            return i
+
+    return -1
